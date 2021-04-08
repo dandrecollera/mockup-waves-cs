@@ -10,17 +10,23 @@ using System.Windows.Forms;
 
 namespace Semz
 {
-    public partial class main : Form
+    public partial class transaction : Form
     {
-
-        
-        public main()
+        public transaction()
         {
             InitializeComponent();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            main mainForm = new main();
+            mainForm.ShowDialog();
             this.Close();
         }
 
@@ -45,14 +51,6 @@ namespace Semz
             this.Hide();
             inventory inventoryForm = new inventory();
             inventoryForm.ShowDialog();
-            this.Close();
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            transaction transactionForm = new transaction();
-            transactionForm.ShowDialog();
             this.Close();
         }
 

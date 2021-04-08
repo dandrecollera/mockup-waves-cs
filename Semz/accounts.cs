@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace Semz
 {
-    public partial class main : Form
+    public partial class accounts : Form
     {
 
-        
-        public main()
+        public accounts()
         {
             InitializeComponent();
         }
@@ -24,11 +23,11 @@ namespace Semz
             this.Close();
         }
 
-        private void mANAGEACCOUNTSToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            accounts accountForm = new accounts();
-            accountForm.ShowDialog();
+            main mainForm = new main();
+            mainForm.ShowDialog();
             this.Close();
         }
 
@@ -61,6 +60,11 @@ namespace Semz
             this.Hide();
             report reportForm = new report();
             reportForm.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

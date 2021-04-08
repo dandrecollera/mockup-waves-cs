@@ -17,6 +17,24 @@ namespace Semz
             InitializeComponent();
         }
 
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            changePass passForm = new changePass();
+            passForm.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            main mainForm = new main();
+            mainForm.ShowDialog();
+            this.Close();
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
