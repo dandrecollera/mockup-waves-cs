@@ -63,6 +63,7 @@
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(504, 290);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(202, 13);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "admin";
@@ -74,6 +75,7 @@
             this.textBox2.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox2.Location = new System.Drawing.Point(504, 339);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(202, 13);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "admin";
@@ -85,6 +87,7 @@
             this.textBox3.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox3.Location = new System.Drawing.Point(504, 387);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(202, 13);
             this.textBox3.TabIndex = 4;
             this.textBox3.Text = "admin";
@@ -138,6 +141,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 603);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(827, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 

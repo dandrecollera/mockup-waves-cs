@@ -86,7 +86,7 @@
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(193, 17);
-            this.toolStripStatusLabel1.Text = "Welcome to the Manage Accounts.";
+            this.toolStripStatusLabel1.Text = "Welcome to the Manage Inventory.";
             // 
             // button6
             // 

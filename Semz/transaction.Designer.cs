@@ -241,7 +241,7 @@
             this.toolStripMenuItem3});
             this.menuStrip4.Location = new System.Drawing.Point(546, 7);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(183, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(63, 24);
             this.menuStrip4.TabIndex = 19;
             this.menuStrip4.Text = "INVENTORY";
             // 
@@ -374,6 +374,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "transaction";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "transaction";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

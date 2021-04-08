@@ -90,8 +90,8 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(203, 17);
-            this.toolStripStatusLabel1.Text = "Welcome to the Manage Transaction.";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(183, 17);
+            this.toolStripStatusLabel1.Text = "Welcome to the Manage Reports.";
             // 
             // button6
             // 
