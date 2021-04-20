@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -58,7 +59,7 @@
             this.aCCOUNTSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(214, 7);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(196, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(78, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,31 +70,37 @@
             this.aCCOUNTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mANAGEACCOUNTSToolStripMenuItem,
             this.lOGOUTToolStripMenuItem});
-            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.aCCOUNTSToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aCCOUNTSToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.aCCOUNTSToolStripMenuItem.Name = "aCCOUNTSToolStripMenuItem";
-            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.aCCOUNTSToolStripMenuItem.Text = "ACCOUNTS";
             this.aCCOUNTSToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.aCCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.aCCOUNTSToolStripMenuItem_MouseEnter);
+            this.aCCOUNTSToolStripMenuItem.MouseLeave += new System.EventHandler(this.aCCOUNTSToolStripMenuItem_MouseLeave);
             // 
             // mANAGEACCOUNTSToolStripMenuItem
             // 
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
             this.mANAGEACCOUNTSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_Click);
+            this.mANAGEACCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_MouseEnter);
+            this.mANAGEACCOUNTSToolStripMenuItem.MouseLeave += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_MouseLeave);
             // 
             // lOGOUTToolStripMenuItem
             // 
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
+            this.lOGOUTToolStripMenuItem.MouseEnter += new System.EventHandler(this.lOGOUTToolStripMenuItem_MouseEnter);
+            this.lOGOUTToolStripMenuItem.MouseLeave += new System.EventHandler(this.lOGOUTToolStripMenuItem_MouseLeave);
             // 
             // menuStrip2
             // 
@@ -103,16 +110,18 @@
             this.toolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(313, 7);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(78, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(79, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "INVENTORY";
+            this.menuStrip2.MouseEnter += new System.EventHandler(this.menuStrip2_MouseEnter);
+            this.menuStrip2.MouseLeave += new System.EventHandler(this.menuStrip2_MouseLeave);
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
             this.toolStripMenuItem1.Text = "INVENTORY";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -124,16 +133,18 @@
             this.toolStripMenuItem2});
             this.menuStrip3.Location = new System.Drawing.Point(416, 7);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(95, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(99, 24);
             this.menuStrip3.TabIndex = 2;
             this.menuStrip3.Text = "INVENTORY";
+            this.menuStrip3.MouseEnter += new System.EventHandler(this.menuStrip3_MouseEnter);
+            this.menuStrip3.MouseLeave += new System.EventHandler(this.menuStrip3_MouseLeave);
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(87, 20);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(91, 20);
             this.toolStripMenuItem2.Text = "TRANSACTIONS";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -145,16 +156,18 @@
             this.toolStripMenuItem3});
             this.menuStrip4.Location = new System.Drawing.Point(546, 7);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(63, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(69, 24);
             this.menuStrip4.TabIndex = 3;
             this.menuStrip4.Text = "INVENTORY";
+            this.menuStrip4.MouseEnter += new System.EventHandler(this.menuStrip4_MouseEnter);
+            this.menuStrip4.MouseLeave += new System.EventHandler(this.menuStrip4_MouseLeave);
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem3.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(55, 20);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem3.Text = "REPORTS";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -170,12 +183,15 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripProgressBar1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 603);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(827, 22);
@@ -189,6 +205,12 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 17);
             this.toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.toolStripProgressBar1.Visible = false;
             // 
             // main
             // 
@@ -240,5 +262,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }

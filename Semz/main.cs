@@ -26,6 +26,7 @@ namespace Semz
 
         private void mANAGEACCOUNTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            updateBar();
             this.Hide();
             accounts accountForm = new accounts();
             accountForm.ShowDialog();
@@ -34,6 +35,7 @@ namespace Semz
 
         private void lOGOUTToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            updateBar();
             this.Hide();
             Login loginForm = new Login();
             loginForm.ShowDialog();
@@ -42,6 +44,7 @@ namespace Semz
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            updateBar();
             this.Hide();
             inventory inventoryForm = new inventory();
             inventoryForm.ShowDialog();
@@ -50,6 +53,7 @@ namespace Semz
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            updateBar();
             this.Hide();
             transaction transactionForm = new transaction();
             transactionForm.ShowDialog();
@@ -58,10 +62,92 @@ namespace Semz
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
+            updateBar();
             this.Hide();
             report reportForm = new report();
             reportForm.ShowDialog();
             this.Close();
+        }
+
+        private void aCCOUNTSToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Go to Accounts.";
+        }
+
+        private void aCCOUNTSToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+        }
+
+        private void mANAGEACCOUNTSToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage User Accounts.";
+        }
+
+        private void mANAGEACCOUNTSToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+        }
+
+        private void lOGOUTToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Logout to Admin Menu.";
+        }
+
+        private void lOGOUTToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+        }
+
+        private void menuStrip2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage Inventory.";
+        }
+
+        private void menuStrip2_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+        }
+
+        private void menuStrip3_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage Transaction.";
+        }
+
+        private void menuStrip3_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+        }
+
+        private void menuStrip4_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage Reports.";
+        }
+
+        private void menuStrip4_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Quit.";
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Welcome to the Admin Menu.";
+        }
+
+        public void updateBar()
+        {
+            toolStripProgressBar1.Visible = true;
+            for(int x = 0; x <= 100; x++)
+            {
+                toolStripProgressBar1.Value = x;
+                Task.Delay(25).Wait();
+            }
+
         }
     }
 }
