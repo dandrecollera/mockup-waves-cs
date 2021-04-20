@@ -63,6 +63,7 @@
             this.reporttitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
@@ -196,7 +197,8 @@
             this.idreportsDataGridViewTextBoxColumn,
             this.reporttitleDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.authorDataGridViewTextBoxColumn});
+            this.authorDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.reportsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
             this.dataGridView1.Name = "dataGridView1";
@@ -433,6 +435,12 @@
             this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
             this.authorDataGridViewTextBoxColumn.Width = 140;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "report";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Report";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
             // report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,5 +526,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reporttitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
