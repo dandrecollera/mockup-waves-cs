@@ -12,6 +12,8 @@ namespace Semz
 {
     public partial class report : Form
     {
+        reportsFunctions repFunctions = new reportsFunctions();
+
         public report()
         {
             InitializeComponent();
@@ -61,5 +63,63 @@ namespace Semz
         {
             this.Close();
         }
+
+        private void report_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'waves_schemaDataSet.reports' table. You can move, or remove it, as needed.
+            this.reportsTableAdapter.Fill(this.waves_schemaDataSet.reports);
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox2.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox5.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            richTextBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(textBox2.Text);
+
+                if (MessageBox.Show("Do you want to delete the report?", "Delete Report", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    if (repFunctions.deleteReports(id))
+                    {
+                        MessageBox.Show("Successfully Deleted!", "Delete Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        textBox2.Text = "";
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                        textBox5.Text = "";
+                        richTextBox1.Text = "";
+                        refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Report not deleted", "Delete Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid ID!", "Delete Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public void refresh()
+        {
+            this.reportsTableAdapter.Fill(this.waves_schemaDataSet.reports);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            refresh();
+        }
     }
+
 }

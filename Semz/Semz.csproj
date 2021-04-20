@@ -87,6 +87,7 @@
     <Compile Include="report.Designer.cs">
       <DependentUpon>report.cs</DependentUpon>
     </Compile>
+    <Compile Include="reportsFunctions.cs" />
     <Compile Include="transaction.cs">
       <SubType>Form</SubType>
     </Compile>

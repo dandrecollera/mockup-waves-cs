@@ -70,8 +70,8 @@ namespace Semz
 
         private void accounts_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'waves_schemaDataSet.accounts' table. You can move, or remove it, as needed.
-            this.accountsTableAdapter.Fill(this.waves_schemaDataSet.accounts);
+            // TODO: This line of code loads data into the 'waves_schemaDataSet1.accounts' table. You can move, or remove it, as needed.
+            this.accountsTableAdapter.Fill(this.waves_schemaDataSet1.accounts);
 
         }
 
@@ -119,7 +119,7 @@ namespace Semz
 
         public void refresh()
         {
-            this.accountsTableAdapter.Fill(this.waves_schemaDataSet.accounts);
+            this.accountsTableAdapter.Fill(this.waves_schemaDataSet1.accounts);
 
         }
 

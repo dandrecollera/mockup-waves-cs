@@ -65,6 +65,9 @@
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.waves_schemaDataSet1 = new Semz.waves_schemaDataSet();
+            this.accountsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.accountsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,6 +78,9 @@
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -128,6 +134,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -137,7 +144,7 @@
             this.usernameDataGridViewTextBoxColumn,
             this.sexDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.accountsBindingSource;
+            this.dataGridView1.DataSource = this.accountsBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
@@ -450,6 +457,21 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
+            // waves_schemaDataSet1
+            // 
+            this.waves_schemaDataSet1.DataSetName = "waves_schemaDataSet";
+            this.waves_schemaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accountsBindingSource1
+            // 
+            this.accountsBindingSource1.DataMember = "accounts";
+            this.accountsBindingSource1.DataSource = this.waves_schemaDataSet1;
+            // 
+            // accountsBindingSource2
+            // 
+            this.accountsBindingSource2.DataMember = "accounts";
+            this.accountsBindingSource2.DataSource = this.waves_schemaDataSet1;
+            // 
             // accounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,6 +519,9 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,5 +563,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private waves_schemaDataSet waves_schemaDataSet1;
+        private System.Windows.Forms.BindingSource accountsBindingSource1;
+        private System.Windows.Forms.BindingSource accountsBindingSource2;
     }
 }

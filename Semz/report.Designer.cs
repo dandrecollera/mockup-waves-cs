@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(report));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -38,10 +39,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGEACCOUNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aCCOUNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +51,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
+            this.reportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportsTableAdapter = new Semz.waves_schemaDataSetTableAdapters.reportsTableAdapter();
+            this.idreportsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reporttitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -61,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip4.SuspendLayout();
             this.menuStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -108,6 +120,7 @@
             this.button6.Size = new System.Drawing.Size(77, 25);
             this.button6.TabIndex = 39;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -124,6 +137,7 @@
             this.button5.Size = new System.Drawing.Size(73, 28);
             this.button5.TabIndex = 40;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -175,44 +189,29 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.reportTitle,
-            this.date,
-            this.author});
+            this.idreportsDataGridViewTextBoxColumn,
+            this.reporttitleDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.authorDataGridViewTextBoxColumn,
+            this.reportDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.reportsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 37;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // reportTitle
-            // 
-            this.reportTitle.HeaderText = "Report Title";
-            this.reportTitle.Name = "reportTitle";
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            // 
-            // author
-            // 
-            this.author.HeaderText = "Author";
-            this.author.Name = "author";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // lOGOUTToolStripMenuItem
             // 
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
@@ -221,7 +220,7 @@
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
             this.mANAGEACCOUNTSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_Click);
             // 
@@ -232,11 +231,11 @@
             this.aCCOUNTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mANAGEACCOUNTSToolStripMenuItem,
             this.lOGOUTToolStripMenuItem});
-            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.aCCOUNTSToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aCCOUNTSToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.aCCOUNTSToolStripMenuItem.Name = "aCCOUNTSToolStripMenuItem";
-            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.aCCOUNTSToolStripMenuItem.Text = "ACCOUNTS";
             this.aCCOUNTSToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
@@ -265,16 +264,16 @@
             this.toolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(313, 7);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(78, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(79, 24);
             this.menuStrip2.TabIndex = 31;
             this.menuStrip2.Text = "INVENTORY";
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
             this.toolStripMenuItem1.Text = "INVENTORY";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -286,25 +285,25 @@
             this.aCCOUNTSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(214, 7);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(76, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(78, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(87, 20);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(91, 20);
             this.toolStripMenuItem2.Text = "TRANSACTIONS";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem3.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(55, 20);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem3.Text = "REPORTS";
             // 
             // pictureBox1
@@ -328,7 +327,7 @@
             this.toolStripMenuItem3});
             this.menuStrip4.Location = new System.Drawing.Point(546, 7);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(63, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(69, 24);
             this.menuStrip4.TabIndex = 33;
             this.menuStrip4.Text = "INVENTORY";
             // 
@@ -340,9 +339,103 @@
             this.toolStripMenuItem2});
             this.menuStrip3.Location = new System.Drawing.Point(416, 7);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(95, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(99, 24);
             this.menuStrip3.TabIndex = 32;
             this.menuStrip3.Text = "INVENTORY";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Black;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(19, 104);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(302, 13);
+            this.textBox1.TabIndex = 44;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Black;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(22, 283);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(302, 13);
+            this.textBox4.TabIndex = 45;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Black;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(19, 243);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(302, 13);
+            this.textBox3.TabIndex = 46;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Black;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(23, 207);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(302, 13);
+            this.textBox2.TabIndex = 47;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.Black;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.ForeColor = System.Drawing.Color.White;
+            this.textBox5.Location = new System.Drawing.Point(19, 324);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(302, 13);
+            this.textBox5.TabIndex = 48;
+            // 
+            // waves_schemaDataSet
+            // 
+            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
+            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportsBindingSource
+            // 
+            this.reportsBindingSource.DataMember = "reports";
+            this.reportsBindingSource.DataSource = this.waves_schemaDataSet;
+            // 
+            // reportsTableAdapter
+            // 
+            this.reportsTableAdapter.ClearBeforeFill = true;
+            // 
+            // idreportsDataGridViewTextBoxColumn
+            // 
+            this.idreportsDataGridViewTextBoxColumn.DataPropertyName = "id_reports";
+            this.idreportsDataGridViewTextBoxColumn.HeaderText = "id_reports";
+            this.idreportsDataGridViewTextBoxColumn.Name = "idreportsDataGridViewTextBoxColumn";
+            // 
+            // reporttitleDataGridViewTextBoxColumn
+            // 
+            this.reporttitleDataGridViewTextBoxColumn.DataPropertyName = "report_title";
+            this.reporttitleDataGridViewTextBoxColumn.HeaderText = "report_title";
+            this.reporttitleDataGridViewTextBoxColumn.Name = "reporttitleDataGridViewTextBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // authorDataGridViewTextBoxColumn
+            // 
+            this.authorDataGridViewTextBoxColumn.DataPropertyName = "author";
+            this.authorDataGridViewTextBoxColumn.HeaderText = "author";
+            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
+            // 
+            // reportDataGridViewTextBoxColumn
+            // 
+            this.reportDataGridViewTextBoxColumn.DataPropertyName = "report";
+            this.reportDataGridViewTextBoxColumn.HeaderText = "report";
+            this.reportDataGridViewTextBoxColumn.Name = "reportDataGridViewTextBoxColumn";
             // 
             // report
             // 
@@ -351,6 +444,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(827, 625);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button6);
@@ -369,6 +467,7 @@
             this.Name = "report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "report";
+            this.Load += new System.EventHandler(this.report_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -381,6 +480,8 @@
             this.menuStrip4.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,10 +498,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reportTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGEACCOUNTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aCCOUNTSToolStripMenuItem;
@@ -413,5 +510,18 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip4;
         private System.Windows.Forms.MenuStrip menuStrip3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox5;
+        private waves_schemaDataSet waves_schemaDataSet;
+        private System.Windows.Forms.BindingSource reportsBindingSource;
+        private waves_schemaDataSetTableAdapters.reportsTableAdapter reportsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idreportsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reporttitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reportDataGridViewTextBoxColumn;
     }
 }
