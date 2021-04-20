@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(accounts));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -56,6 +57,14 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
+            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountsTableAdapter = new Semz.waves_schemaDataSetTableAdapters.accountsTableAdapter();
+            this.idaccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,6 +73,8 @@
             this.menuStrip3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -117,12 +128,21 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idaccountsDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.sexDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.accountsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button2
             // 
@@ -187,6 +207,7 @@
             this.button5.Size = new System.Drawing.Size(73, 28);
             this.button5.TabIndex = 15;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -203,13 +224,14 @@
             this.button6.Size = new System.Drawing.Size(77, 25);
             this.button6.TabIndex = 15;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
             this.toolStripMenuItem1.Text = "INVENTORY";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -234,16 +256,16 @@
             this.toolStripMenuItem3});
             this.menuStrip4.Location = new System.Drawing.Point(546, 7);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(63, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(69, 24);
             this.menuStrip4.TabIndex = 19;
             this.menuStrip4.Text = "INVENTORY";
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem3.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(55, 20);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem3.Text = "REPORTS";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -255,16 +277,16 @@
             this.toolStripMenuItem2});
             this.menuStrip3.Location = new System.Drawing.Point(416, 7);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(95, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(99, 24);
             this.menuStrip3.TabIndex = 18;
             this.menuStrip3.Text = "INVENTORY";
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(87, 20);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(91, 20);
             this.toolStripMenuItem2.Text = "TRANSACTIONS";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -276,7 +298,7 @@
             this.toolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(313, 7);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(78, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(79, 24);
             this.menuStrip2.TabIndex = 17;
             this.menuStrip2.Text = "INVENTORY";
             // 
@@ -288,7 +310,7 @@
             this.aCCOUNTSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(214, 7);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(76, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(78, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -299,11 +321,11 @@
             this.aCCOUNTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mANAGEACCOUNTSToolStripMenuItem,
             this.lOGOUTToolStripMenuItem});
-            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.aCCOUNTSToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aCCOUNTSToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.aCCOUNTSToolStripMenuItem.Name = "aCCOUNTSToolStripMenuItem";
-            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.aCCOUNTSToolStripMenuItem.Text = "ACCOUNTS";
             this.aCCOUNTSToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
@@ -312,7 +334,7 @@
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
             // 
             // lOGOUTToolStripMenuItem
@@ -320,7 +342,7 @@
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
@@ -384,6 +406,50 @@
             this.textBox6.Size = new System.Drawing.Size(302, 13);
             this.textBox6.TabIndex = 22;
             // 
+            // waves_schemaDataSet
+            // 
+            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
+            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accountsBindingSource
+            // 
+            this.accountsBindingSource.DataMember = "accounts";
+            this.accountsBindingSource.DataSource = this.waves_schemaDataSet;
+            // 
+            // accountsTableAdapter
+            // 
+            this.accountsTableAdapter.ClearBeforeFill = true;
+            // 
+            // idaccountsDataGridViewTextBoxColumn
+            // 
+            this.idaccountsDataGridViewTextBoxColumn.DataPropertyName = "id_accounts";
+            this.idaccountsDataGridViewTextBoxColumn.HeaderText = "id_accounts";
+            this.idaccountsDataGridViewTextBoxColumn.Name = "idaccountsDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // sexDataGridViewTextBoxColumn
+            // 
+            this.sexDataGridViewTextBoxColumn.DataPropertyName = "sex";
+            this.sexDataGridViewTextBoxColumn.HeaderText = "sex";
+            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
             // accounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,6 +481,7 @@
             this.Name = "accounts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "accounts";
+            this.Load += new System.EventHandler(this.accounts_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -428,6 +495,8 @@
             this.menuStrip2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,5 +530,13 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        private waves_schemaDataSet waves_schemaDataSet;
+        private System.Windows.Forms.BindingSource accountsBindingSource;
+        private waves_schemaDataSetTableAdapters.accountsTableAdapter accountsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idaccountsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
     }
 }
