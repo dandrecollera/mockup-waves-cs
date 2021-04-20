@@ -39,6 +39,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.reportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGEACCOUNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aCCOUNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,23 +58,20 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
-            this.reportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportsTableAdapter = new Semz.waves_schemaDataSetTableAdapters.reportsTableAdapter();
             this.idreportsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reporttitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip4.SuspendLayout();
             this.menuStrip3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -197,14 +196,23 @@
             this.idreportsDataGridViewTextBoxColumn,
             this.reporttitleDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.authorDataGridViewTextBoxColumn,
-            this.reportDataGridViewTextBoxColumn});
+            this.authorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.reportsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // reportsBindingSource
+            // 
+            this.reportsBindingSource.DataMember = "reports";
+            this.reportsBindingSource.DataSource = this.waves_schemaDataSet;
+            // 
+            // waves_schemaDataSet
+            // 
+            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
+            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lOGOUTToolStripMenuItem
             // 
@@ -358,7 +366,7 @@
             this.textBox4.BackColor = System.Drawing.Color.Black;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(22, 283);
+            this.textBox4.Location = new System.Drawing.Point(20, 283);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(302, 13);
             this.textBox4.TabIndex = 45;
@@ -368,7 +376,7 @@
             this.textBox3.BackColor = System.Drawing.Color.Black;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(19, 243);
+            this.textBox3.Location = new System.Drawing.Point(20, 243);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(302, 13);
             this.textBox3.TabIndex = 46;
@@ -378,7 +386,7 @@
             this.textBox2.BackColor = System.Drawing.Color.Black;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(23, 207);
+            this.textBox2.Location = new System.Drawing.Point(20, 206);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(302, 13);
             this.textBox2.TabIndex = 47;
@@ -388,20 +396,10 @@
             this.textBox5.BackColor = System.Drawing.Color.Black;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(19, 324);
+            this.textBox5.Location = new System.Drawing.Point(20, 323);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(302, 13);
             this.textBox5.TabIndex = 48;
-            // 
-            // waves_schemaDataSet
-            // 
-            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
-            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportsBindingSource
-            // 
-            this.reportsBindingSource.DataMember = "reports";
-            this.reportsBindingSource.DataSource = this.waves_schemaDataSet;
             // 
             // reportsTableAdapter
             // 
@@ -410,32 +408,30 @@
             // idreportsDataGridViewTextBoxColumn
             // 
             this.idreportsDataGridViewTextBoxColumn.DataPropertyName = "id_reports";
-            this.idreportsDataGridViewTextBoxColumn.HeaderText = "id_reports";
+            this.idreportsDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idreportsDataGridViewTextBoxColumn.Name = "idreportsDataGridViewTextBoxColumn";
+            this.idreportsDataGridViewTextBoxColumn.Width = 25;
             // 
             // reporttitleDataGridViewTextBoxColumn
             // 
             this.reporttitleDataGridViewTextBoxColumn.DataPropertyName = "report_title";
-            this.reporttitleDataGridViewTextBoxColumn.HeaderText = "report_title";
+            this.reporttitleDataGridViewTextBoxColumn.HeaderText = "Report Title";
             this.reporttitleDataGridViewTextBoxColumn.Name = "reporttitleDataGridViewTextBoxColumn";
+            this.reporttitleDataGridViewTextBoxColumn.Width = 148;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 120;
             // 
             // authorDataGridViewTextBoxColumn
             // 
             this.authorDataGridViewTextBoxColumn.DataPropertyName = "author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "author";
+            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
             this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            // 
-            // reportDataGridViewTextBoxColumn
-            // 
-            this.reportDataGridViewTextBoxColumn.DataPropertyName = "report";
-            this.reportDataGridViewTextBoxColumn.HeaderText = "report";
-            this.reportDataGridViewTextBoxColumn.Name = "reportDataGridViewTextBoxColumn";
+            this.authorDataGridViewTextBoxColumn.Width = 140;
             // 
             // report
             // 
@@ -471,6 +467,8 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -480,8 +478,6 @@
             this.menuStrip4.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,6 +518,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reporttitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reportDataGridViewTextBoxColumn;
     }
 }
