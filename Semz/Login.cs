@@ -22,15 +22,52 @@ namespace Semz
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            changePass passForm = new changePass();
-            passForm.ShowDialog();
-            this.Close();
+            mydb db = new mydb();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `accounts` WHERE `username` = @username", db.GetConnection);
+            command.Parameters.Add("@username", MySqlDbType.VarChar).Value = textBox1.Text;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                this.Hide();
+                changePass passForm = new changePass();
+                passForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            mydb db = new mydb();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `accounts` WHERE `username` = @username AND `password` = @password", db.GetConnection);
+            command.Parameters.Add("@username", MySqlDbType.VarChar).Value = textBox1.Text;
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = textBox2.Text;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if(table.Rows.Count > 0)
+            {
+                this.Hide();
+                main mainForm = new main();
+                mainForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
