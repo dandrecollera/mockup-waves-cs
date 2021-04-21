@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Semz
 {
@@ -29,10 +30,7 @@ namespace Semz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            main mainForm = new main();
-            mainForm.ShowDialog();
-            this.Close();
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
