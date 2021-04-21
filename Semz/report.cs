@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Semz
 {
     public partial class report : Form
     {
         reportsFunctions repFunctions = new reportsFunctions();
-
+        mydb db = new mydb();
         public report()
         {
             InitializeComponent();
@@ -113,7 +115,15 @@ namespace Semz
 
         public void refresh()
         {
-            this.reportsTableAdapter.Fill(this.waves_schemaDataSet.reports);
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            richTextBox1.Text = "";
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `reports` ");
+            DataTable table = repFunctions.getReport(command);
+            dataGridView1.DataSource = table;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -195,6 +205,77 @@ namespace Semz
         {
             toolStripStatusLabel1.Text = "Click to refresh the datas. Clear the information window.";
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            addReport addReportForm = new addReport();
+            if(addReportForm.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void update()
+        {
+            updateReport updateReportForm = new updateReport();
+            updateReportForm.textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            updateReportForm.textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            updateReportForm.textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            updateReportForm.richTextBox1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+
+            if(updateReportForm.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string input = textBox1.Text.Trim();
+                bool numeric = int.TryParse(input, out int num);
+                MySqlCommand command;
+                if (numeric)
+                {
+                    command = new MySqlCommand("SELECT * FROM `reports` WHERE `id_reports` =" + num);
+                }
+                else
+                {
+                    command = new MySqlCommand("SELECT * FROM `reports` WHERE `report_title` LIKE @input OR `author` LIKE @input", db.GetConnection);
+                    command.Parameters.AddWithValue("@input", "%" + input + "%");
+
+                }
+
+                DataTable table = repFunctions.getReport(command);
+                dataGridView1.DataSource = table;
+
+                textBox2.Text = table.Rows[0]["id_reports"].ToString();
+                textBox3.Text = table.Rows[0]["report_title"].ToString();
+                textBox4.Text = table.Rows[0]["date"].ToString();
+                textBox5.Text = table.Rows[0]["author"].ToString();
+                richTextBox1.Text = table.Rows[0]["report"].ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Enter a Valid Input.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
+
 
 }

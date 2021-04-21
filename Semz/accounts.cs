@@ -252,46 +252,12 @@ namespace Semz
 
         private void button3_Click(object sender, EventArgs e)
         {
-            updateAccounts updateAccountsForm = new updateAccounts();
-            updateAccountsForm.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            updateAccountsForm.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            updateAccountsForm.textBox3.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            updateAccountsForm.textBox4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "M")
-            {
-                updateAccountsForm.radioButton1.Checked = true;
-            }else if(dataGridView1.CurrentRow.Cells[3].Value.ToString() == "F")
-            {
-                updateAccountsForm.radioButton2.Checked = true;
-            }
-
-            if (updateAccountsForm.ShowDialog() == DialogResult.OK)
-            {
-                refresh();
-            }
+            update();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            updateAccounts updateAccountsForm = new updateAccounts();
-            updateAccountsForm.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            updateAccountsForm.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            updateAccountsForm.textBox3.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            updateAccountsForm.textBox4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-
-            if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "M")
-            {
-                updateAccountsForm.radioButton1.Checked = true;
-            }
-            else if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "F")
-            {
-                updateAccountsForm.radioButton2.Checked = true;
-            }
-
-            if (updateAccountsForm.ShowDialog() == DialogResult.OK)
-            {
-                refresh();
-            }
+            update();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -326,6 +292,29 @@ namespace Semz
             catch
             {
                 MessageBox.Show("Enter a valid input.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void update()
+        {
+            updateAccounts updateAccountsForm = new updateAccounts();
+            updateAccountsForm.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            updateAccountsForm.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            updateAccountsForm.textBox3.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            updateAccountsForm.textBox4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "M")
+            {
+                updateAccountsForm.radioButton1.Checked = true;
+            }
+            else if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "F")
+            {
+                updateAccountsForm.radioButton2.Checked = true;
+            }
+
+            if (updateAccountsForm.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
             }
         }
     }
