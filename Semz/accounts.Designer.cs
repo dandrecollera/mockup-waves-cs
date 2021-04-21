@@ -156,11 +156,16 @@
             this.dateDataGridViewTextBoxColumn,
             this.password});
             this.dataGridView1.DataSource = this.accountsBindingSource2;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             // 
             // idaccountsDataGridViewTextBoxColumn
@@ -168,6 +173,7 @@
             this.idaccountsDataGridViewTextBoxColumn.DataPropertyName = "id_accounts";
             this.idaccountsDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idaccountsDataGridViewTextBoxColumn.Name = "idaccountsDataGridViewTextBoxColumn";
+            this.idaccountsDataGridViewTextBoxColumn.ReadOnly = true;
             this.idaccountsDataGridViewTextBoxColumn.Width = 25;
             // 
             // nameDataGridViewTextBoxColumn
@@ -175,6 +181,7 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 140;
             // 
             // usernameDataGridViewTextBoxColumn
@@ -182,6 +189,7 @@
             this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
             this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
             this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
             this.usernameDataGridViewTextBoxColumn.Width = 120;
             // 
             // sexDataGridViewTextBoxColumn
@@ -189,6 +197,7 @@
             this.sexDataGridViewTextBoxColumn.DataPropertyName = "sex";
             this.sexDataGridViewTextBoxColumn.HeaderText = "Sex";
             this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            this.sexDataGridViewTextBoxColumn.ReadOnly = true;
             this.sexDataGridViewTextBoxColumn.Width = 35;
             // 
             // dateDataGridViewTextBoxColumn
@@ -196,6 +205,7 @@
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateDataGridViewTextBoxColumn.Width = 113;
             // 
             // password
@@ -203,6 +213,7 @@
             this.password.DataPropertyName = "password";
             this.password.HeaderText = "password";
             this.password.Name = "password";
+            this.password.ReadOnly = true;
             this.password.Visible = false;
             // 
             // accountsBindingSource2
@@ -247,6 +258,7 @@
             this.button3.Size = new System.Drawing.Size(73, 28);
             this.button3.TabIndex = 15;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
             // 
             // button4
@@ -259,7 +271,7 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(12, 549);
+            this.button4.Location = new System.Drawing.Point(11, 549);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(76, 28);
             this.button4.TabIndex = 15;
@@ -416,7 +428,7 @@
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
             this.mANAGEACCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_MouseEnter);
             // 
@@ -425,7 +437,7 @@
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             this.lOGOUTToolStripMenuItem.MouseEnter += new System.EventHandler(this.lOGOUTToolStripMenuItem_MouseEnter);
@@ -480,6 +492,7 @@
             this.textBox5.ForeColor = System.Drawing.Color.White;
             this.textBox5.Location = new System.Drawing.Point(20, 360);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(302, 13);
             this.textBox5.TabIndex = 22;
             // 
@@ -490,6 +503,7 @@
             this.textBox6.ForeColor = System.Drawing.Color.White;
             this.textBox6.Location = new System.Drawing.Point(21, 400);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(302, 13);
             this.textBox6.TabIndex = 22;
             // 
@@ -520,6 +534,7 @@
             this.textBox7.Location = new System.Drawing.Point(21, 321);
             this.textBox7.Name = "textBox7";
             this.textBox7.PasswordChar = '*';
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(271, 13);
             this.textBox7.TabIndex = 23;
             // 
@@ -630,13 +645,13 @@
         private waves_schemaDataSet waves_schemaDataSet1;
         private System.Windows.Forms.BindingSource accountsBindingSource1;
         private System.Windows.Forms.BindingSource accountsBindingSource2;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idaccountsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

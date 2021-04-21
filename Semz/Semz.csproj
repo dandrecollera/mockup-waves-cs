@@ -100,6 +100,12 @@
     <Compile Include="transaction.Designer.cs">
       <DependentUpon>transaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="updateAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateAccounts.Designer.cs">
+      <DependentUpon>updateAccounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="waves_schemaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="transaction.resx">
       <DependentUpon>transaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateAccounts.resx">
+      <DependentUpon>updateAccounts.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
