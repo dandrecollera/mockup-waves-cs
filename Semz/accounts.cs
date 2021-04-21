@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Semz
 {
     public partial class accounts : Form
     {
         accountsFunctions accFunctions = new accountsFunctions();
+        mydb db = new mydb();
         public accounts()
         {
             InitializeComponent();
@@ -121,7 +123,17 @@ namespace Semz
 
         public void refresh()
         {
-            this.accountsTableAdapter.Fill(this.waves_schemaDataSet1.accounts);
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `accounts`");
+            DataTable table = accFunctions.getUser(command);
+
+            dataGridView1.DataSource = table;
 
         }
 
@@ -279,6 +291,41 @@ namespace Semz
             if (updateAccountsForm.ShowDialog() == DialogResult.OK)
             {
                 refresh();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string input = textBox1.Text.Trim();
+                bool numeric = int.TryParse(input, out int num);
+                MySqlCommand command;      
+                if (numeric)
+                {
+                    command = new MySqlCommand("SELECT * FROM `accounts` WHERE `id_accounts` =" + num);
+                }
+                else
+                {
+                    command = new MySqlCommand("SELECT * FROM `accounts` WHERE `name` LIKE @input", db.GetConnection);
+                    command.Parameters.AddWithValue("@input", "%" + input + "%");
+                }
+                DataTable table = accFunctions.getUser(command);
+
+                dataGridView1.DataSource = table;
+
+                textBox2.Text = table.Rows[0]["id_accounts"].ToString();
+                textBox3.Text = table.Rows[0]["name"].ToString();
+                textBox4.Text = table.Rows[0]["username"].ToString();
+                textBox5.Text = table.Rows[0]["sex"].ToString();
+                textBox6.Text = table.Rows[0]["date"].ToString();
+                textBox7.Text = table.Rows[0]["password"].ToString();
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Enter a valid input.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
