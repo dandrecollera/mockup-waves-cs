@@ -39,11 +39,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idreportsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reporttitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +59,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.reportsTableAdapter = new Semz.waves_schemaDataSetTableAdapters.reportsTableAdapter();
+            this.idreportsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reporttitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
@@ -205,40 +205,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // idreportsDataGridViewTextBoxColumn
-            // 
-            this.idreportsDataGridViewTextBoxColumn.DataPropertyName = "id_reports";
-            this.idreportsDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idreportsDataGridViewTextBoxColumn.Name = "idreportsDataGridViewTextBoxColumn";
-            this.idreportsDataGridViewTextBoxColumn.Width = 25;
-            // 
-            // reporttitleDataGridViewTextBoxColumn
-            // 
-            this.reporttitleDataGridViewTextBoxColumn.DataPropertyName = "report_title";
-            this.reporttitleDataGridViewTextBoxColumn.HeaderText = "Report Title";
-            this.reporttitleDataGridViewTextBoxColumn.Name = "reporttitleDataGridViewTextBoxColumn";
-            this.reporttitleDataGridViewTextBoxColumn.Width = 148;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // authorDataGridViewTextBoxColumn
-            // 
-            this.authorDataGridViewTextBoxColumn.DataPropertyName = "author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
-            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            this.authorDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "report";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Report";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // reportsBindingSource
             // 
@@ -440,6 +406,41 @@
             // reportsTableAdapter
             // 
             this.reportsTableAdapter.ClearBeforeFill = true;
+            // 
+            // idreportsDataGridViewTextBoxColumn
+            // 
+            this.idreportsDataGridViewTextBoxColumn.DataPropertyName = "id_reports";
+            this.idreportsDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idreportsDataGridViewTextBoxColumn.Name = "idreportsDataGridViewTextBoxColumn";
+            this.idreportsDataGridViewTextBoxColumn.Width = 25;
+            // 
+            // reporttitleDataGridViewTextBoxColumn
+            // 
+            this.reporttitleDataGridViewTextBoxColumn.DataPropertyName = "report_title";
+            this.reporttitleDataGridViewTextBoxColumn.HeaderText = "Report Title";
+            this.reporttitleDataGridViewTextBoxColumn.Name = "reporttitleDataGridViewTextBoxColumn";
+            this.reporttitleDataGridViewTextBoxColumn.Width = 148;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // authorDataGridViewTextBoxColumn
+            // 
+            this.authorDataGridViewTextBoxColumn.DataPropertyName = "author";
+            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
+            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
+            this.authorDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "report";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Report";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // report
             // 

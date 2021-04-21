@@ -54,6 +54,12 @@
       <DependentUpon>accounts.cs</DependentUpon>
     </Compile>
     <Compile Include="accountsFunctions.cs" />
+    <Compile Include="addAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addAccounts.Designer.cs">
+      <DependentUpon>addAccounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="changePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <EmbeddedResource Include="accounts.resx">
       <DependentUpon>accounts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addAccounts.resx">
+      <DependentUpon>addAccounts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="changePass.resx">
       <DependentUpon>changePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +131,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="report.resx">
       <DependentUpon>report.cs</DependentUpon>
@@ -152,6 +162,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye closew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye openw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
