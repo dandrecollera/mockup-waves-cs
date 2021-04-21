@@ -78,6 +78,15 @@ namespace Semz
             }
 
         }
-    }
+        
+        public DataTable getUser(MySqlCommand command)
+        {
+            command.Connection = db.GetConnection;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
 
+            return table;
+        }
+    }
 }

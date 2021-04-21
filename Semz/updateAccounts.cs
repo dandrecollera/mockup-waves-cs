@@ -81,5 +81,19 @@ namespace Semz
                 return true;
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (textBox3.PasswordChar == '*')
+            {
+                textBox3.PasswordChar = '\0';
+                pictureBox1.BackgroundImage = Semz.Properties.Resources.eye_openw;
+            }
+            else
+            {
+                textBox3.PasswordChar = '*';
+                pictureBox1.BackgroundImage = Semz.Properties.Resources.eye_closew;
+            }
+        }
     }
 }
