@@ -56,6 +56,7 @@
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
             // button2
             // 
@@ -73,6 +74,7 @@
             this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
             // textBox1
             // 
@@ -84,6 +86,7 @@
             this.textBox1.Size = new System.Drawing.Size(202, 13);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "admin";
+            this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
             // 
             // textBox2
             // 
@@ -96,6 +99,7 @@
             this.textBox2.Size = new System.Drawing.Size(202, 13);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "password";
+            this.textBox2.MouseEnter += new System.EventHandler(this.textBox2_MouseEnter);
             // 
             // statusStrip1
             // 
@@ -112,8 +116,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(116, 17);
-            this.toolStripStatusLabel1.Text = "Enter your username";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(137, 17);
+            this.toolStripStatusLabel1.Text = "Login into your account.";
             // 
             // pictureBox1
             // 
@@ -127,6 +131,7 @@
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
             // Login
             // 
@@ -145,6 +150,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.MouseEnter += new System.EventHandler(this.Login_MouseEnter);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
