@@ -135,6 +135,8 @@
             this.button1.TabIndex = 12;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // dataGridView1
             // 
@@ -159,6 +161,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             // 
             // idaccountsDataGridViewTextBoxColumn
             // 
@@ -227,6 +230,7 @@
             this.button2.Size = new System.Drawing.Size(64, 26);
             this.button2.TabIndex = 14;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
             // button3
             // 
@@ -243,6 +247,7 @@
             this.button3.Size = new System.Drawing.Size(73, 28);
             this.button3.TabIndex = 15;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
             // 
             // button4
             // 
@@ -260,6 +265,7 @@
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
             // 
             // button5
             // 
@@ -277,6 +283,7 @@
             this.button5.TabIndex = 15;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
             // 
             // button6
             // 
@@ -294,6 +301,7 @@
             this.button6.TabIndex = 15;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.MouseEnter += new System.EventHandler(this.button6_MouseEnter);
             // 
             // toolStripMenuItem1
             // 
@@ -303,6 +311,7 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
             this.toolStripMenuItem1.Text = "INVENTORY";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.toolStripMenuItem1.MouseEnter += new System.EventHandler(this.toolStripMenuItem1_MouseEnter);
             // 
             // pictureBox2
             // 
@@ -316,6 +325,7 @@
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
             // 
             // menuStrip4
             // 
@@ -337,6 +347,7 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem3.Text = "REPORTS";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            this.toolStripMenuItem3.MouseEnter += new System.EventHandler(this.toolStripMenuItem3_MouseEnter);
             // 
             // menuStrip3
             // 
@@ -358,6 +369,7 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(91, 20);
             this.toolStripMenuItem2.Text = "TRANSACTIONS";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.toolStripMenuItem2.MouseEnter += new System.EventHandler(this.toolStripMenuItem2_MouseEnter);
             // 
             // menuStrip2
             // 
@@ -397,23 +409,26 @@
             this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.aCCOUNTSToolStripMenuItem.Text = "ACCOUNTS";
             this.aCCOUNTSToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.aCCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.aCCOUNTSToolStripMenuItem_MouseEnter);
             // 
             // mANAGEACCOUNTSToolStripMenuItem
             // 
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
+            this.mANAGEACCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_MouseEnter);
             // 
             // lOGOUTToolStripMenuItem
             // 
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
+            this.lOGOUTToolStripMenuItem.MouseEnter += new System.EventHandler(this.lOGOUTToolStripMenuItem_MouseEnter);
             // 
             // textBox1
             // 
@@ -520,6 +535,7 @@
             this.pictureBox3.TabIndex = 24;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
             // 
             // accounts
             // 
@@ -555,6 +571,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "accounts";
             this.Load += new System.EventHandler(this.accounts_Load);
+            this.MouseEnter += new System.EventHandler(this.accounts_MouseEnter);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
