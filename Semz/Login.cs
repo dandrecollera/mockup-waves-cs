@@ -39,5 +39,35 @@ namespace Semz
         {
             this.Close();
         }
+
+        private void Login_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Login into your account.";
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Quit.";
+        }
+
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Enter your username.";
+        }
+
+        private void textBox2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Enter your password.";
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Confirm.";
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Forget Password. Change your password.";
+        }
     }
 }
