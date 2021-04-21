@@ -101,6 +101,7 @@ namespace Semz
                         textBox4.Text = "";
                         textBox5.Text = "";
                         textBox6.Text = "";
+                        textBox7.Text = "";
                         refresh();
 
                     }
@@ -146,7 +147,10 @@ namespace Semz
         private void button4_Click(object sender, EventArgs e)
         {
             addAccounts addAccountForm = new addAccounts();
-            addAccountForm.Show(this);
+            if(addAccountForm.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -232,6 +236,50 @@ namespace Semz
         private void button5_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Click to refresh the datas. Clear the information window.";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            updateAccounts updateAccountsForm = new updateAccounts();
+            updateAccountsForm.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            updateAccountsForm.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            updateAccountsForm.textBox3.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            updateAccountsForm.textBox4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "M")
+            {
+                updateAccountsForm.radioButton1.Checked = true;
+            }else if(dataGridView1.CurrentRow.Cells[3].Value.ToString() == "F")
+            {
+                updateAccountsForm.radioButton2.Checked = true;
+            }
+
+            if (updateAccountsForm.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            updateAccounts updateAccountsForm = new updateAccounts();
+            updateAccountsForm.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            updateAccountsForm.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            updateAccountsForm.textBox3.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            updateAccountsForm.textBox4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "M")
+            {
+                updateAccountsForm.radioButton1.Checked = true;
+            }
+            else if (dataGridView1.CurrentRow.Cells[3].Value.ToString() == "F")
+            {
+                updateAccountsForm.radioButton2.Checked = true;
+            }
+
+            if (updateAccountsForm.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
         }
     }
 }
