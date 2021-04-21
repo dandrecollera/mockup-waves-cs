@@ -60,6 +60,12 @@
     <Compile Include="addAccounts.Designer.cs">
       <DependentUpon>addAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="addReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addReport.Designer.cs">
+      <DependentUpon>addReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="changePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="updateAccounts.Designer.cs">
       <DependentUpon>updateAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="updateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateReport.Designer.cs">
+      <DependentUpon>updateReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="waves_schemaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addAccounts.resx">
       <DependentUpon>addAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addReport.resx">
+      <DependentUpon>addReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="changePass.resx">
       <DependentUpon>changePass.cs</DependentUpon>
@@ -147,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="updateAccounts.resx">
       <DependentUpon>updateAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateReport.resx">
+      <DependentUpon>updateReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
