@@ -59,5 +59,10 @@ namespace Semz
         {
             toolStripStatusLabel1.Text = "Confirm.";
         }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Return to Login Menu.";
+        }
     }
 }
