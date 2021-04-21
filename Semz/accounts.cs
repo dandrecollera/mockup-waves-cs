@@ -82,6 +82,7 @@ namespace Semz
             textBox4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             textBox5.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             textBox6.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            textBox7.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -126,6 +127,26 @@ namespace Semz
         private void button5_Click(object sender, EventArgs e)
         {
             refresh();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if(textBox7.PasswordChar == '*')
+            {
+                textBox7.PasswordChar = '\0';
+                pictureBox3.BackgroundImage = Semz.Properties.Resources.eye_openw;
+            }
+            else
+            {
+                textBox7.PasswordChar = '*';
+                pictureBox3.BackgroundImage = Semz.Properties.Resources.eye_closew;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            addAccounts addAccountForm = new addAccounts();
+            addAccountForm.Show(this);
         }
     }
 }
