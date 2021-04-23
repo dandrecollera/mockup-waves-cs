@@ -185,5 +185,80 @@ namespace Semz
                 MessageBox.Show("Enter a Valid Transaction ID", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void transaction_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage Transaction.";
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Go to Admin Menu.";
+        }
+
+        private void aCCOUNTSToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Go to Accounts.";
+        }
+
+        private void mANAGEACCOUNTSToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage User Accounts.";
+        }
+
+        private void lOGOUTToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Logout to Admin Menu.";
+        }
+
+        private void toolStripMenuItem1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage Inventory.";
+        }
+
+        private void toolStripMenuItem2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage Transaction.";
+        }
+
+        private void toolStripMenuItem3_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Manage Reports.";
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Quit.";
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Find specific user transaction.";
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Click to add new user transaction.";
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Click to update the user transaction.";
+        }
+
+        private void button6_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Click to delete the user transaction.";
+        }
+
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Click to refresh the datas. Clear the information window";
+        }
+
+        private void dataGridView1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Click a cell to expand info. Double click a cell to edit.";
+        }
     }
 }
