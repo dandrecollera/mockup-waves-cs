@@ -60,6 +60,12 @@
     <Compile Include="addAccounts.Designer.cs">
       <DependentUpon>addAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="addInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addInventory.Designer.cs">
+      <DependentUpon>addInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="addReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,7 @@
     <Compile Include="inventory.Designer.cs">
       <DependentUpon>inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventoryFunction.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +119,12 @@
     <Compile Include="updateAccounts.Designer.cs">
       <DependentUpon>updateAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="updateInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateInventory.Designer.cs">
+      <DependentUpon>updateInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="updateReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addAccounts.resx">
       <DependentUpon>addAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addInventory.resx">
+      <DependentUpon>addInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addReport.resx">
       <DependentUpon>addReport.cs</DependentUpon>
@@ -162,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="updateAccounts.resx">
       <DependentUpon>updateAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateInventory.resx">
+      <DependentUpon>updateInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateReport.resx">
       <DependentUpon>updateReport.cs</DependentUpon>

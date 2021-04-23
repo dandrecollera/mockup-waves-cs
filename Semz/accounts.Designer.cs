@@ -41,8 +41,9 @@
             this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.accountsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.waves_schemaDataSet1 = new Semz.waves_schemaDataSet();
+            this.accountsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -74,8 +75,9 @@
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip4.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -155,7 +157,7 @@
             this.sexDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.password});
-            this.dataGridView1.DataSource = this.accountsBindingSource2;
+            this.dataGridView1.DataSource = this.accountsBindingSource3;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
             this.dataGridView1.MultiSelect = false;
@@ -165,7 +167,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             // 
             // idaccountsDataGridViewTextBoxColumn
@@ -216,15 +218,20 @@
             this.password.ReadOnly = true;
             this.password.Visible = false;
             // 
-            // accountsBindingSource2
+            // accountsBindingSource3
             // 
-            this.accountsBindingSource2.DataMember = "accounts";
-            this.accountsBindingSource2.DataSource = this.waves_schemaDataSet1;
+            this.accountsBindingSource3.DataMember = "accounts";
+            this.accountsBindingSource3.DataSource = this.waves_schemaDataSet1;
             // 
             // waves_schemaDataSet1
             // 
             this.waves_schemaDataSet1.DataSetName = "waves_schemaDataSet";
             this.waves_schemaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accountsBindingSource2
+            // 
+            this.accountsBindingSource2.DataMember = "accounts";
+            this.accountsBindingSource2.DataSource = this.waves_schemaDataSet1;
             // 
             // button2
             // 
@@ -318,10 +325,10 @@
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.toolStripMenuItem1.Text = "INVENTORY";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             this.toolStripMenuItem1.MouseEnter += new System.EventHandler(this.toolStripMenuItem1_MouseEnter);
@@ -348,16 +355,16 @@
             this.toolStripMenuItem3});
             this.menuStrip4.Location = new System.Drawing.Point(546, 7);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(69, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(63, 24);
             this.menuStrip4.TabIndex = 19;
             this.menuStrip4.Text = "INVENTORY";
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
             this.toolStripMenuItem3.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(61, 20);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(55, 20);
             this.toolStripMenuItem3.Text = "REPORTS";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             this.toolStripMenuItem3.MouseEnter += new System.EventHandler(this.toolStripMenuItem3_MouseEnter);
@@ -370,16 +377,16 @@
             this.toolStripMenuItem2});
             this.menuStrip3.Location = new System.Drawing.Point(416, 7);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(99, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(95, 24);
             this.menuStrip3.TabIndex = 18;
             this.menuStrip3.Text = "INVENTORY";
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(91, 20);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(87, 20);
             this.toolStripMenuItem2.Text = "TRANSACTIONS";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             this.toolStripMenuItem2.MouseEnter += new System.EventHandler(this.toolStripMenuItem2_MouseEnter);
@@ -392,7 +399,7 @@
             this.toolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(313, 7);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(79, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(78, 24);
             this.menuStrip2.TabIndex = 17;
             this.menuStrip2.Text = "INVENTORY";
             // 
@@ -404,7 +411,7 @@
             this.aCCOUNTSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(214, 7);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(78, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(76, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -415,11 +422,11 @@
             this.aCCOUNTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mANAGEACCOUNTSToolStripMenuItem,
             this.lOGOUTToolStripMenuItem});
-            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
+            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
             this.aCCOUNTSToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aCCOUNTSToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.aCCOUNTSToolStripMenuItem.Name = "aCCOUNTSToolStripMenuItem";
-            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.aCCOUNTSToolStripMenuItem.Text = "ACCOUNTS";
             this.aCCOUNTSToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.aCCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.aCCOUNTSToolStripMenuItem_MouseEnter);
@@ -429,7 +436,7 @@
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
             this.mANAGEACCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_MouseEnter);
             // 
@@ -438,7 +445,7 @@
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             this.lOGOUTToolStripMenuItem.MouseEnter += new System.EventHandler(this.lOGOUTToolStripMenuItem_MouseEnter);
@@ -592,8 +599,9 @@
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
@@ -654,5 +662,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.BindingSource accountsBindingSource3;
     }
 }

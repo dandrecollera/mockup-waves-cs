@@ -255,10 +255,6 @@ namespace Semz
             update();
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            update();
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -273,7 +269,7 @@ namespace Semz
                 }
                 else
                 {
-                    command = new MySqlCommand("SELECT * FROM `accounts` WHERE `name` LIKE @input", db.GetConnection);
+                    command = new MySqlCommand("SELECT * FROM `accounts` WHERE `name` LIKE @input OR `username` LIKE @input", db.GetConnection);
                     command.Parameters.AddWithValue("@input", "%" + input + "%");
                 }
                 DataTable table = accFunctions.getUser(command);
@@ -316,6 +312,11 @@ namespace Semz
             {
                 refresh();
             }
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            update();
         }
     }
 }

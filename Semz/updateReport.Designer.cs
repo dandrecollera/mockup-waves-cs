@@ -59,6 +59,7 @@ namespace Semz
             this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(34, 177);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(296, 13);
             this.textBox1.TabIndex = 46;
             // 

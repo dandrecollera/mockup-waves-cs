@@ -18,8 +18,6 @@ namespace Semz
             InitializeComponent();
         }
 
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             mydb db = new mydb();
@@ -39,9 +37,7 @@ namespace Semz
             else
             {
                 MessageBox.Show("Invalid Username.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
             }
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,10 +60,7 @@ namespace Semz
             else
             {
                 MessageBox.Show("Invalid Username or Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
             }
-
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
