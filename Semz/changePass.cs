@@ -109,6 +109,10 @@ namespace Semz
                 loginForm.ShowDialog();
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Incorrect.", "Change Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
