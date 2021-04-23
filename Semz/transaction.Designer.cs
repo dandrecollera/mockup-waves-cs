@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(transaction));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -38,6 +41,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idtransactionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountpaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.changeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
@@ -51,24 +62,22 @@
             this.mANAGEACCOUNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
-            this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transactionTableAdapter = new Semz.waves_schemaDataSetTableAdapters.transactionTableAdapter();
-            this.idtransactionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountpaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.changeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip4.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -105,6 +114,7 @@
             this.button6.Size = new System.Drawing.Size(77, 25);
             this.button6.TabIndex = 25;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -121,6 +131,7 @@
             this.button5.Size = new System.Drawing.Size(73, 28);
             this.button5.TabIndex = 26;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -154,6 +165,7 @@
             this.button3.Size = new System.Drawing.Size(73, 28);
             this.button3.TabIndex = 28;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -170,12 +182,17 @@
             this.button2.Size = new System.Drawing.Size(64, 26);
             this.button2.TabIndex = 24;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtransactionDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn,
@@ -185,9 +202,78 @@
             this.itemsDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.transactionBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.Size = new System.Drawing.Size(476, 522);
             this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // idtransactionDataGridViewTextBoxColumn
+            // 
+            this.idtransactionDataGridViewTextBoxColumn.DataPropertyName = "id_transaction";
+            this.idtransactionDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idtransactionDataGridViewTextBoxColumn.Name = "idtransactionDataGridViewTextBoxColumn";
+            this.idtransactionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idtransactionDataGridViewTextBoxColumn.Width = 24;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.amountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountpaidDataGridViewTextBoxColumn
+            // 
+            this.amountpaidDataGridViewTextBoxColumn.DataPropertyName = "amount_paid";
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.amountpaidDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.amountpaidDataGridViewTextBoxColumn.HeaderText = "Paid Amount";
+            this.amountpaidDataGridViewTextBoxColumn.Name = "amountpaidDataGridViewTextBoxColumn";
+            this.amountpaidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // changeDataGridViewTextBoxColumn
+            // 
+            this.changeDataGridViewTextBoxColumn.DataPropertyName = "change";
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.changeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.changeDataGridViewTextBoxColumn.HeaderText = "Change";
+            this.changeDataGridViewTextBoxColumn.Name = "changeDataGridViewTextBoxColumn";
+            this.changeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 109;
+            // 
+            // itemsDataGridViewTextBoxColumn
+            // 
+            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "items";
+            this.itemsDataGridViewTextBoxColumn.HeaderText = "items";
+            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
+            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.itemsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // transactionBindingSource
+            // 
+            this.transactionBindingSource.DataMember = "transaction";
+            this.transactionBindingSource.DataSource = this.waves_schemaDataSet;
+            // 
+            // waves_schemaDataSet
+            // 
+            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
+            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -337,55 +423,69 @@
             this.richTextBox1.TabIndex = 29;
             this.richTextBox1.Text = "";
             // 
-            // waves_schemaDataSet
-            // 
-            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
-            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // transactionBindingSource
-            // 
-            this.transactionBindingSource.DataMember = "transaction";
-            this.transactionBindingSource.DataSource = this.waves_schemaDataSet;
-            // 
             // transactionTableAdapter
             // 
             this.transactionTableAdapter.ClearBeforeFill = true;
             // 
-            // idtransactionDataGridViewTextBoxColumn
+            // textBox1
             // 
-            this.idtransactionDataGridViewTextBoxColumn.DataPropertyName = "id_transaction";
-            this.idtransactionDataGridViewTextBoxColumn.HeaderText = "id_transaction";
-            this.idtransactionDataGridViewTextBoxColumn.Name = "idtransactionDataGridViewTextBoxColumn";
+            this.textBox1.BackColor = System.Drawing.Color.Black;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(20, 105);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(302, 13);
+            this.textBox1.TabIndex = 45;
             // 
-            // amountDataGridViewTextBoxColumn
+            // textBox2
             // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.textBox2.BackColor = System.Drawing.Color.Black;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(20, 204);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(302, 13);
+            this.textBox2.TabIndex = 46;
             // 
-            // amountpaidDataGridViewTextBoxColumn
+            // textBox3
             // 
-            this.amountpaidDataGridViewTextBoxColumn.DataPropertyName = "amount_paid";
-            this.amountpaidDataGridViewTextBoxColumn.HeaderText = "amount_paid";
-            this.amountpaidDataGridViewTextBoxColumn.Name = "amountpaidDataGridViewTextBoxColumn";
+            this.textBox3.BackColor = System.Drawing.Color.Black;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(20, 244);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(302, 13);
+            this.textBox3.TabIndex = 46;
             // 
-            // changeDataGridViewTextBoxColumn
+            // textBox4
             // 
-            this.changeDataGridViewTextBoxColumn.DataPropertyName = "change";
-            this.changeDataGridViewTextBoxColumn.HeaderText = "change";
-            this.changeDataGridViewTextBoxColumn.Name = "changeDataGridViewTextBoxColumn";
+            this.textBox4.BackColor = System.Drawing.Color.Black;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(20, 283);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(302, 13);
+            this.textBox4.TabIndex = 46;
             // 
-            // dateDataGridViewTextBoxColumn
+            // textBox5
             // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.textBox5.BackColor = System.Drawing.Color.Black;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.ForeColor = System.Drawing.Color.White;
+            this.textBox5.Location = new System.Drawing.Point(20, 323);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(302, 13);
+            this.textBox5.TabIndex = 46;
             // 
-            // itemsDataGridViewTextBoxColumn
+            // textBox6
             // 
-            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "items";
-            this.itemsDataGridViewTextBoxColumn.HeaderText = "items";
-            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
+            this.textBox6.BackColor = System.Drawing.Color.Black;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.ForeColor = System.Drawing.Color.White;
+            this.textBox6.Location = new System.Drawing.Point(20, 361);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(302, 13);
+            this.textBox6.TabIndex = 46;
             // 
             // transaction
             // 
@@ -394,6 +494,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(827, 625);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button6);
@@ -416,6 +522,8 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
@@ -425,8 +533,6 @@
             this.menuStrip2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,6 +564,12 @@
         private waves_schemaDataSet waves_schemaDataSet;
         private System.Windows.Forms.BindingSource transactionBindingSource;
         private waves_schemaDataSetTableAdapters.transactionTableAdapter transactionTableAdapter;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtransactionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountpaidDataGridViewTextBoxColumn;

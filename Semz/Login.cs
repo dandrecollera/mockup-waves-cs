@@ -31,6 +31,7 @@ namespace Semz
             {
                 this.Hide();
                 changePass passForm = new changePass();
+                passForm.username = textBox1.Text;
                 passForm.ShowDialog();
                 this.Close();
             }
@@ -96,6 +97,20 @@ namespace Semz
         private void button2_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Forget Password. Change your password.";
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (textBox2.PasswordChar == '*')
+            {
+                textBox2.PasswordChar = '\0';
+                pictureBox3.BackgroundImage = Semz.Properties.Resources.eye_openw;
+            }
+            else
+            {
+                textBox2.PasswordChar = '*';
+                pictureBox3.BackgroundImage = Semz.Properties.Resources.eye_closew;
+            }
         }
     }
 }

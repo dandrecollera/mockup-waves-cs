@@ -13,6 +13,9 @@ namespace Semz
     public partial class addTransaction : Form
     {
         transactionFunction transFunction = new transactionFunction();
+        public List<int> idlist = new List<int>();
+        public List<int> stock = new List<int>();
+        public List<int> addC = new List<int>();
         public addTransaction()
         {
             InitializeComponent();
@@ -45,11 +48,17 @@ namespace Semz
         {
             string text = "";
             double amount = 0;
+            idlist.Clear();
+            stock.Clear();
+            addC.Clear();
             for(int x = 0; x < dataGridView1.Rows.Count; x++)
             {
                 int val = int.Parse(dataGridView1.Rows[x].Cells[3].Value.ToString());
                 if ( val >= 1)
                 {
+                    idlist.Add(Convert.ToInt32(dataGridView1.Rows[x].Cells[4].Value));
+                    stock.Add(Convert.ToInt32(dataGridView1.Rows[x].Cells[1].Value));
+                    addC.Add(Convert.ToInt32(dataGridView1.Rows[x].Cells[3].Value));
                     amount += Convert.ToDouble(dataGridView1.Rows[x].Cells[2].Value) * Convert.ToDouble(dataGridView1.Rows[x].Cells[3].Value);
                     text += dataGridView1.Rows[x].Cells[0].Value.ToString() +" [" + dataGridView1.Rows[x].Cells[3].Value.ToString()+ "]" + "\n";
                 }
@@ -57,6 +66,8 @@ namespace Semz
             richTextBox1.Text = text;
             textBox1.Text = string.Format("{0:###,###.00}", amount);
         }
+
+        
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -85,8 +96,13 @@ namespace Semz
                         if(transFunction.insertTransaction(amount, amountPaid, items))
                         {
                             MessageBox.Show("Successfully Added", "Add Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            transFunction.updateStocks(idlist, stock, addC);
                             this.DialogResult = DialogResult.OK;
                             this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error!", "Add Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
@@ -101,7 +117,7 @@ namespace Semz
             }
             catch
             {
-
+                MessageBox.Show("Invalid Input", "Add Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
