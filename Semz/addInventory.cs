@@ -83,7 +83,5 @@ namespace Semz
                 return true;
             }
         }
-
-      
     }
 }

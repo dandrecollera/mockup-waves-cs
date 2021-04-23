@@ -61,5 +61,26 @@ namespace Semz
             reportForm.ShowDialog();
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            addTransaction addTransactionForm = new addTransaction();
+            if(addTransactionForm.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+            }
+        }
+
+        public void refresh()
+        {
+
+        }
+
+        private void transaction_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'waves_schemaDataSet.transaction' table. You can move, or remove it, as needed.
+            this.transactionTableAdapter.Fill(this.waves_schemaDataSet.transaction);
+
+        }
     }
 }

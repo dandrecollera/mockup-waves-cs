@@ -72,6 +72,18 @@
     <Compile Include="addReport.Designer.cs">
       <DependentUpon>addReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="addToCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addToCart.Designer.cs">
+      <DependentUpon>addToCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addTransaction.Designer.cs">
+      <DependentUpon>addTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="changePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,7 @@
     <Compile Include="transaction.Designer.cs">
       <DependentUpon>transaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="transactionFunction.cs" />
     <Compile Include="updateAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addReport.resx">
       <DependentUpon>addReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addToCart.resx">
+      <DependentUpon>addToCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addTransaction.resx">
+      <DependentUpon>addTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="changePass.resx">
       <DependentUpon>changePass.cs</DependentUpon>

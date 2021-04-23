@@ -45,7 +45,7 @@ namespace Semz
 
             command.Parameters.Add("@item", MySqlDbType.VarChar).Value = item;
             command.Parameters.Add("@stock", MySqlDbType.Int32).Value = stock;
-            command.Parameters.Add("@price", MySqlDbType.Double).Value = price;
+            command.Parameters.Add("@price", MySqlDbType.Decimal).Value = price;
             command.Parameters.Add("@type", MySqlDbType.VarChar).Value = type;
 
             db.openConnection();
@@ -67,7 +67,7 @@ namespace Semz
             MySqlCommand command = new MySqlCommand("UPDATE `inventory` SET `item` = @item, `stock` = @stock, `price` = @price, `type` = @type WHERE `id_inventory` = @id", db.GetConnection);
             command.Parameters.Add("@item", MySqlDbType.VarChar).Value = item;
             command.Parameters.Add("@stock", MySqlDbType.Int32).Value = stock;
-            command.Parameters.Add("@price", MySqlDbType.Double).Value = price;
+            command.Parameters.Add("@price", MySqlDbType.Decimal).Value = price;
             command.Parameters.Add("@type", MySqlDbType.VarChar).Value = type;
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
 
