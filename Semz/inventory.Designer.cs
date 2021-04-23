@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventory));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -119,6 +119,7 @@
             this.button6.TabIndex = 25;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.MouseEnter += new System.EventHandler(this.button6_MouseEnter);
             // 
             // button5
             // 
@@ -136,6 +137,7 @@
             this.button5.TabIndex = 26;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
             // 
             // button4
             // 
@@ -153,6 +155,7 @@
             this.button4.TabIndex = 27;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
             // 
             // button3
             // 
@@ -170,6 +173,7 @@
             this.button3.TabIndex = 28;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
             // 
             // button2
             // 
@@ -187,6 +191,7 @@
             this.button2.TabIndex = 24;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
             // dataGridView1
             // 
@@ -213,6 +218,7 @@
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             // 
             // idinventoryDataGridViewTextBoxColumn
             // 
@@ -241,9 +247,9 @@
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
@@ -282,6 +288,7 @@
             this.button1.TabIndex = 22;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
             // menuStrip4
             // 
@@ -291,18 +298,20 @@
             this.toolStripMenuItem3});
             this.menuStrip4.Location = new System.Drawing.Point(546, 6);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(63, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(189, 24);
             this.menuStrip4.TabIndex = 19;
             this.menuStrip4.Text = "INVENTORY";
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem3.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(55, 20);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem3.Text = "REPORTS";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            this.toolStripMenuItem3.MouseEnter += new System.EventHandler(this.toolStripMenuItem3_MouseEnter);
+            this.toolStripMenuItem3.MouseLeave += new System.EventHandler(this.toolStripMenuItem3_MouseLeave);
             // 
             // menuStrip3
             // 
@@ -312,18 +321,19 @@
             this.toolStripMenuItem2});
             this.menuStrip3.Location = new System.Drawing.Point(416, 6);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(95, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(99, 24);
             this.menuStrip3.TabIndex = 18;
             this.menuStrip3.Text = "INVENTORY";
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(87, 20);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(91, 20);
             this.toolStripMenuItem2.Text = "TRANSACTIONS";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.toolStripMenuItem2.MouseEnter += new System.EventHandler(this.toolStripMenuItem2_MouseEnter);
             // 
             // menuStrip2
             // 
@@ -333,16 +343,16 @@
             this.toolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(313, 6);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(78, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(79, 24);
             this.menuStrip2.TabIndex = 17;
             this.menuStrip2.Text = "INVENTORY";
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
             this.toolStripMenuItem1.Text = "INVENTORY";
             // 
             // menuStrip1
@@ -353,7 +363,7 @@
             this.aCCOUNTSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(214, 6);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(76, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(78, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -364,31 +374,34 @@
             this.aCCOUNTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mANAGEACCOUNTSToolStripMenuItem,
             this.lOGOUTToolStripMenuItem});
-            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Futura Hv BT", 6.5F);
+            this.aCCOUNTSToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.aCCOUNTSToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aCCOUNTSToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.aCCOUNTSToolStripMenuItem.Name = "aCCOUNTSToolStripMenuItem";
-            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.aCCOUNTSToolStripMenuItem.Text = "ACCOUNTS";
             this.aCCOUNTSToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.aCCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.aCCOUNTSToolStripMenuItem_MouseEnter);
             // 
             // mANAGEACCOUNTSToolStripMenuItem
             // 
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
             this.mANAGEACCOUNTSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_Click_1);
+            this.mANAGEACCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_MouseEnter);
             // 
             // lOGOUTToolStripMenuItem
             // 
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click_1);
+            this.lOGOUTToolStripMenuItem.MouseEnter += new System.EventHandler(this.lOGOUTToolStripMenuItem_MouseEnter);
             // 
             // radioButton1
             // 
@@ -486,6 +499,7 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
             // 
             // textBox1
             // 
@@ -591,6 +605,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "inventory";
             this.Load += new System.EventHandler(this.inventory_Load);
+            this.MouseEnter += new System.EventHandler(this.inventory_MouseEnter);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
