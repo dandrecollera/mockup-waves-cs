@@ -74,7 +74,6 @@ namespace Semz
         {
             // TODO: This line of code loads data into the 'waves_schemaDataSet1.accounts' table. You can move, or remove it, as needed.
             this.accountsTableAdapter.Fill(this.waves_schemaDataSet1.accounts);
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -112,7 +111,6 @@ namespace Semz
                         MessageBox.Show("User not deleted", "Delete User", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-
             }
             catch
             {
@@ -134,7 +132,6 @@ namespace Semz
             DataTable table = accFunctions.getUser(command);
 
             dataGridView1.DataSource = table;
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -255,7 +252,6 @@ namespace Semz
             update();
         }
 
-
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -282,8 +278,6 @@ namespace Semz
                 textBox5.Text = table.Rows[0]["sex"].ToString();
                 textBox6.Text = table.Rows[0]["date"].ToString();
                 textBox7.Text = table.Rows[0]["password"].ToString();
-
-
             }
             catch
             {
@@ -314,7 +308,7 @@ namespace Semz
             }
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             update();
         }

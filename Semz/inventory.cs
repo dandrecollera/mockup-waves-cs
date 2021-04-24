@@ -223,11 +223,6 @@ namespace Semz
             }
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            update();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -342,6 +337,11 @@ namespace Semz
         private void toolStripMenuItem3_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Manage Report.";
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            update();
         }
     }
 }
