@@ -144,7 +144,7 @@ namespace Semz
             for(int x = 0; x <= 100; x++)
             {
                 toolStripProgressBar1.Value = x;
-                Task.Delay(10).Wait();
+                Task.Delay(1000).Wait();
             }
 
         }
