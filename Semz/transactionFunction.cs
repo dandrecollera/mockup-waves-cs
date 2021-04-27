@@ -14,15 +14,17 @@ namespace Semz
     class transactionFunction
     {
         mydb db = new mydb();
-        public bool insertTransaction(double amount, double amountPaid, string items)
+        public bool insertTransaction(double amount, double amountPaid, string items, string rownum, string carted)
         {
             double change = amountPaid - amount;
-            MySqlCommand command = new MySqlCommand("INSERT INTO `transaction`(`amount`,`amount_paid`,`change`, `items`) VALUE (@amount, @amountpaid, @change ,@items)", db.GetConnection);
+            MySqlCommand command = new MySqlCommand("INSERT INTO `transaction`(`amount`,`amount_paid`,`change`, `items`, `items_id`, `carted`) VALUE (@amount, @amountpaid, @change ,@items, @itemid, @carted)", db.GetConnection);
 
             command.Parameters.Add("@amount", MySqlDbType.Decimal).Value = amount;
             command.Parameters.Add("@amountpaid", MySqlDbType.Decimal).Value = amountPaid;
             command.Parameters.Add("@change", MySqlDbType.Decimal).Value = change;
             command.Parameters.Add("@items", MySqlDbType.LongText).Value = items;
+            command.Parameters.Add("@itemid", MySqlDbType.LongText).Value = rownum;
+            command.Parameters.Add("@carted", MySqlDbType.LongText).Value = carted;
 
             db.openConnection();
 
@@ -39,7 +41,7 @@ namespace Semz
 
         }
         
-        public void updateStocks(List<int> id, List<int> stock, List<int> addc)
+        public void reduceStocks(List<int> id, List<int> stock, List<int> addc)
         {
             for(int x = 0; x < id.Count; x++)
             {
@@ -52,6 +54,20 @@ namespace Semz
                 db.closeConnection();
             }
         }
+
+        public void updateStocks(List<int> id, List<int> newVal)
+        {
+            for(int x = 0; x < id.Count; x++)
+            {
+                MySqlCommand command = new MySqlCommand("UPDATE `inventory` SET `stock` = @stock WHERE `id_inventory` = @id", db.GetConnection);
+                command.Parameters.Add("@id", MySqlDbType.Int32).Value = id[x];
+                command.Parameters.Add("@stock", MySqlDbType.Int32).Value = newVal[x];
+                db.openConnection();
+                command.ExecuteNonQuery();
+                db.closeConnection();
+            }
+        }
+
 
         public bool deleteTransaction(int id)
         {
@@ -81,15 +97,17 @@ namespace Semz
             return table;
         }
 
-        public bool updateTransaction(int id, double amount, double amountPaid, string items)
+        public bool updateTransaction(int id, double amount, double amountPaid, string items, string rownum, string carted)
         {
             double change = amountPaid - amount;
-            MySqlCommand command = new MySqlCommand("UPDATE `transaction` SET `amount` = @amount, `amount_paid` = @amountpaid, `change` = @change,`items` = @items WHERE `id_transaction` = @id", db.GetConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE `transaction` SET `amount` = @amount, `amount_paid` = @amountpaid, `change` = @change,`items` = @items, `items_id` = @itemid, `carted` = @carted WHERE `id_transaction` = @id", db.GetConnection);
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
             command.Parameters.Add("@amount", MySqlDbType.Decimal).Value = amount;
             command.Parameters.Add("@amountpaid", MySqlDbType.Decimal).Value = amountPaid;
             command.Parameters.Add("@change", MySqlDbType.Decimal).Value = change;
             command.Parameters.Add("@items", MySqlDbType.LongText).Value = items;
+            command.Parameters.Add("@itemid", MySqlDbType.LongText).Value = rownum;
+            command.Parameters.Add("@carted", MySqlDbType.LongText).Value = carted;
 
             db.openConnection();
 

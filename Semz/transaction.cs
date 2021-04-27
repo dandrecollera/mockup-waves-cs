@@ -14,6 +14,7 @@ namespace Semz
     public partial class transaction : Form
     {
         transactionFunction transFunction = new transactionFunction();
+        mydb db = new mydb();
         public transaction()
         {
             InitializeComponent();
@@ -158,6 +159,8 @@ namespace Semz
             updateTransactionForm.textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             updateTransactionForm.textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             updateTransactionForm.richTextBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            updateTransactionForm.rowcount = dataGridView1.CurrentRow.Cells[6].Value.ToString().Split(' ').Where(x => int.TryParse(x, out _)).Select(int.Parse).ToList();
+            updateTransactionForm.carted = dataGridView1.CurrentRow.Cells[7].Value.ToString().Split(' ').Where(x => int.TryParse(x, out _)).Select(int.Parse).ToList(); ;
             if (updateTransactionForm.ShowDialog() == DialogResult.OK)
             {
                 refresh();
@@ -166,24 +169,7 @@ namespace Semz
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = Convert.ToInt32(textBox1.Text.Trim());
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `transaction` WHERE `id_transaction` =" + id);
-                DataTable table = transFunction.getTransaction(command);
-                dataGridView1.DataSource = table;
-
-                textBox2.Text = table.Rows[0]["id_transaction"].ToString();
-                textBox3.Text = table.Rows[0]["amount"].ToString();
-                textBox4.Text = table.Rows[0]["amount_paid"].ToString();
-                textBox5.Text = table.Rows[0]["change"].ToString();
-                textBox6.Text = table.Rows[0]["date"].ToString();
-                richTextBox1.Text = table.Rows[0]["items"].ToString();
-            }
-            catch
-            {
-                MessageBox.Show("Enter a Valid Transaction ID", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            search();
         }
 
         private void transaction_MouseEnter(object sender, EventArgs e)
@@ -259,6 +245,36 @@ namespace Semz
         private void dataGridView1_MouseEnter(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Click a cell to expand info. Double click a cell to edit.";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void search()
+        {
+            try
+            {
+                string input = textBox1.Text.Trim();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `transaction` WHERE `id_transaction` LIKE @input ", db.GetConnection);
+                command.Parameters.AddWithValue("@input", "%" + input + "%");
+
+
+                DataTable table = transFunction.getTransaction(command);
+                dataGridView1.DataSource = table;
+
+                textBox2.Text = table.Rows[0]["id_transaction"].ToString();
+                textBox3.Text = table.Rows[0]["amount"].ToString();
+                textBox4.Text = table.Rows[0]["amount_paid"].ToString();
+                textBox5.Text = table.Rows[0]["change"].ToString();
+                textBox6.Text = table.Rows[0]["date"].ToString();
+                richTextBox1.Text = table.Rows[0]["items"].ToString();
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

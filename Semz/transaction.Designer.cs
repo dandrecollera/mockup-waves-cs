@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(transaction));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -47,6 +47,8 @@
             this.changeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.items_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
             this.button1 = new System.Windows.Forms.Button();
@@ -62,13 +64,13 @@
             this.mANAGEACCOUNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.transactionTableAdapter = new Semz.waves_schemaDataSetTableAdapters.transactionTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.transactionTableAdapter = new Semz.waves_schemaDataSetTableAdapters.transactionTableAdapter();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
@@ -204,7 +206,9 @@
             this.amountpaidDataGridViewTextBoxColumn,
             this.changeDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.itemsDataGridViewTextBoxColumn});
+            this.itemsDataGridViewTextBoxColumn,
+            this.items_id,
+            this.carted});
             this.dataGridView1.DataSource = this.transactionBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(340, 56);
             this.dataGridView1.MultiSelect = false;
@@ -228,9 +232,9 @@
             // amountDataGridViewTextBoxColumn
             // 
             this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
-            dataGridViewCellStyle19.Format = "N2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.amountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.amountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
             this.amountDataGridViewTextBoxColumn.ReadOnly = true;
@@ -238,9 +242,9 @@
             // amountpaidDataGridViewTextBoxColumn
             // 
             this.amountpaidDataGridViewTextBoxColumn.DataPropertyName = "amount_paid";
-            dataGridViewCellStyle20.Format = "N2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.amountpaidDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.amountpaidDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.amountpaidDataGridViewTextBoxColumn.HeaderText = "Paid Amount";
             this.amountpaidDataGridViewTextBoxColumn.Name = "amountpaidDataGridViewTextBoxColumn";
             this.amountpaidDataGridViewTextBoxColumn.ReadOnly = true;
@@ -248,9 +252,9 @@
             // changeDataGridViewTextBoxColumn
             // 
             this.changeDataGridViewTextBoxColumn.DataPropertyName = "change";
-            dataGridViewCellStyle21.Format = "N2";
-            dataGridViewCellStyle21.NullValue = null;
-            this.changeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.changeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.changeDataGridViewTextBoxColumn.HeaderText = "Change";
             this.changeDataGridViewTextBoxColumn.Name = "changeDataGridViewTextBoxColumn";
             this.changeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -270,6 +274,22 @@
             this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
             this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
             this.itemsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // items_id
+            // 
+            this.items_id.DataPropertyName = "items_id";
+            this.items_id.HeaderText = "items_id";
+            this.items_id.Name = "items_id";
+            this.items_id.ReadOnly = true;
+            this.items_id.Visible = false;
+            // 
+            // carted
+            // 
+            this.carted.DataPropertyName = "carted";
+            this.carted.HeaderText = "carted";
+            this.carted.Name = "carted";
+            this.carted.ReadOnly = true;
+            this.carted.Visible = false;
             // 
             // transactionBindingSource
             // 
@@ -411,7 +431,7 @@
             this.mANAGEACCOUNTSToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.mANAGEACCOUNTSToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mANAGEACCOUNTSToolStripMenuItem.Name = "mANAGEACCOUNTSToolStripMenuItem";
-            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mANAGEACCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.mANAGEACCOUNTSToolStripMenuItem.Text = "MANAGE ACCOUNTS";
             this.mANAGEACCOUNTSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_Click);
             this.mANAGEACCOUNTSToolStripMenuItem.MouseEnter += new System.EventHandler(this.mANAGEACCOUNTSToolStripMenuItem_MouseEnter);
@@ -421,7 +441,7 @@
             this.lOGOUTToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.lOGOUTToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
             this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             this.lOGOUTToolStripMenuItem.MouseEnter += new System.EventHandler(this.lOGOUTToolStripMenuItem_MouseEnter);
@@ -437,10 +457,6 @@
             this.richTextBox1.TabIndex = 29;
             this.richTextBox1.Text = "";
             // 
-            // transactionTableAdapter
-            // 
-            this.transactionTableAdapter.ClearBeforeFill = true;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Black;
@@ -450,6 +466,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 13);
             this.textBox1.TabIndex = 45;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -500,6 +517,10 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(302, 13);
             this.textBox6.TabIndex = 46;
+            // 
+            // transactionTableAdapter
+            // 
+            this.transactionTableAdapter.ClearBeforeFill = true;
             // 
             // transaction
             // 
@@ -562,7 +583,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip4;
@@ -585,11 +605,14 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtransactionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountpaidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn changeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn items_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carted;
     }
 }

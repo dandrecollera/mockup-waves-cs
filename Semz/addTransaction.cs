@@ -16,6 +16,8 @@ namespace Semz
         public List<int> idlist = new List<int>();
         public List<int> stock = new List<int>();
         public List<int> addC = new List<int>();
+        public string carted;
+        public string rownum;
         public addTransaction()
         {
             InitializeComponent();
@@ -51,6 +53,8 @@ namespace Semz
             idlist.Clear();
             stock.Clear();
             addC.Clear();
+            rownum = "";
+            carted = "";
             for(int x = 0; x < dataGridView1.Rows.Count; x++)
             {
                 int val = int.Parse(dataGridView1.Rows[x].Cells[3].Value.ToString());
@@ -59,12 +63,14 @@ namespace Semz
                     idlist.Add(Convert.ToInt32(dataGridView1.Rows[x].Cells[4].Value));
                     stock.Add(Convert.ToInt32(dataGridView1.Rows[x].Cells[1].Value));
                     addC.Add(Convert.ToInt32(dataGridView1.Rows[x].Cells[3].Value));
+                    rownum += x + " ";
+                    carted += dataGridView1.Rows[x].Cells[3].Value.ToString() + " ";
                     amount += Convert.ToDouble(dataGridView1.Rows[x].Cells[2].Value) * Convert.ToDouble(dataGridView1.Rows[x].Cells[3].Value);
                     text += dataGridView1.Rows[x].Cells[0].Value.ToString() +" [" + dataGridView1.Rows[x].Cells[3].Value.ToString()+ "]" + "\n";
                 }
             }
             richTextBox1.Text = text;
-            textBox1.Text = string.Format("{0:###,###.00}", amount);
+            textBox1.Text = string.Format("{0:###,##0.00}", amount);
         }
 
         
@@ -93,10 +99,10 @@ namespace Semz
                 {
                     if (verif())
                     {
-                        if(transFunction.insertTransaction(amount, amountPaid, items))
+                        if(transFunction.insertTransaction(amount, amountPaid, items, rownum, carted))
                         {
                             MessageBox.Show("Successfully Added", "Add Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            transFunction.updateStocks(idlist, stock, addC);
+                            transFunction.reduceStocks(idlist, stock, addC);
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }

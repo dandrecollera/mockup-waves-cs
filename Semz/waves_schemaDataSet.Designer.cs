@@ -1382,6 +1382,10 @@ namespace Semz {
             
             private global::System.Data.DataColumn columnitems;
             
+            private global::System.Data.DataColumn columnitems_id;
+            
+            private global::System.Data.DataColumn columncarted;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public transactionDataTable() {
@@ -1465,6 +1469,22 @@ namespace Semz {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn items_idColumn {
+                get {
+                    return this.columnitems_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cartedColumn {
+                get {
+                    return this.columncarted;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1500,7 +1520,7 @@ namespace Semz {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public transactionRow AddtransactionRow(double amount, double amount_paid, double change, System.DateTime date, string items) {
+            public transactionRow AddtransactionRow(double amount, double amount_paid, double change, System.DateTime date, string items, string items_id, string carted) {
                 transactionRow rowtransactionRow = ((transactionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1508,7 +1528,9 @@ namespace Semz {
                         amount_paid,
                         change,
                         date,
-                        items};
+                        items,
+                        items_id,
+                        carted};
                 rowtransactionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtransactionRow);
                 return rowtransactionRow;
@@ -1544,6 +1566,8 @@ namespace Semz {
                 this.columnchange = base.Columns["change"];
                 this.columndate = base.Columns["date"];
                 this.columnitems = base.Columns["items"];
+                this.columnitems_id = base.Columns["items_id"];
+                this.columncarted = base.Columns["carted"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1561,6 +1585,10 @@ namespace Semz {
                 base.Columns.Add(this.columndate);
                 this.columnitems = new global::System.Data.DataColumn("items", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitems);
+                this.columnitems_id = new global::System.Data.DataColumn("items_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitems_id);
+                this.columncarted = new global::System.Data.DataColumn("carted", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncarted);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_transaction}, true));
                 this.columnid_transaction.AutoIncrement = true;
@@ -1998,6 +2026,62 @@ namespace Semz {
                 set {
                     this[this.tabletransaction.itemsColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string items_id {
+                get {
+                    try {
+                        return ((string)(this[this.tabletransaction.items_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'items_id\' in table \'transaction\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletransaction.items_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string carted {
+                get {
+                    try {
+                        return ((string)(this[this.tabletransaction.cartedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'carted\' in table \'transaction\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletransaction.cartedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isitems_idNull() {
+                return this.IsNull(this.tabletransaction.items_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setitems_idNull() {
+                this[this.tabletransaction.items_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscartedNull() {
+                return this.IsNull(this.tabletransaction.cartedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcartedNull() {
+                this[this.tabletransaction.cartedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3779,6 +3863,8 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("change", "change");
             tableMapping.ColumnMappings.Add("date", "date");
             tableMapping.ColumnMappings.Add("items", "items");
+            tableMapping.ColumnMappings.Add("items_id", "items_id");
+            tableMapping.ColumnMappings.Add("carted", "carted");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3795,24 +3881,24 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount_paid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "change";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -3827,29 +3913,29 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `transaction` (`amount`, `amount_paid`, `change`, `date`, `items`) VA" +
-                "LUES (@p1, @p2, @p3, @p4, @p5)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `transaction` (`amount`, `amount_paid`, `change`, `date`, `items`, `c" +
+                "arted`, `items_id`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount_paid";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "change";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
@@ -3869,32 +3955,44 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             param.SourceColumn = "items";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "carted";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "items_id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `transaction` SET `amount` = @p1, `amount_paid` = @p2, `change` = @p3, `da" +
-                "te` = @p4, `items` = @p5 WHERE ((`id_transaction` = @p6) AND (`amount` = @p7) AN" +
-                "D (`amount_paid` = @p8) AND (`change` = @p9) AND (`date` = @p10))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `transaction` SET `amount` = @p1, `amount_paid` = @p2, `change` = @p3, `date` = @p4, `items` = @p5, `carted` = @p6, `items_id` = @p7 WHERE ((`id_transaction` = @p8) AND (`amount` = @p9) AND (`amount_paid` = @p10) AND (`change` = @p11) AND (`date` = @p12))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount_paid";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "change";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
@@ -3916,6 +4014,20 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "carted";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "items_id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -3923,31 +4035,31 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "amount_paid";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "change";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
+            param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
@@ -3969,8 +4081,8 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id_transaction`, `amount`, `amount_paid`, `change`, `date`, `items` FROM " +
-                "`transaction`";
+            this._commandCollection[0].CommandText = "SELECT id_transaction, amount, amount_paid, `change`, `date`, items, carted, item" +
+                "s_id FROM transaction";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4031,11 +4143,11 @@ namespace Semz.waves_schemaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, double p2, double p3, double p4, System.DateTime p5) {
+        public virtual int Delete(int p1, decimal p2, decimal p3, decimal p4, System.DateTime p5) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((double)(p2));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((double)(p3));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(p4));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(p3));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(p4));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(p5));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4057,16 +4169,28 @@ namespace Semz.waves_schemaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(double p1, double p2, double p3, System.DateTime p4, string p5) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((double)(p1));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((double)(p2));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((double)(p3));
+        public virtual int Insert(decimal p1, decimal p2, decimal p3, System.DateTime p4, string p5, string p6, string p7) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(p3));
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(p4));
             if ((p5 == null)) {
                 throw new global::System.ArgumentNullException("p5");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p6 == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
+            }
+            if ((p7 == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(p7));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4088,10 +4212,10 @@ namespace Semz.waves_schemaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(double p1, double p2, double p3, System.DateTime p4, string p5, int p6, double p7, double p8, double p9, System.DateTime p10) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(p1));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((double)(p2));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(p3));
+        public virtual int Update(decimal p1, decimal p2, decimal p3, System.DateTime p4, string p5, string p6, string p7, int p8, decimal p9, decimal p10, decimal p11, System.DateTime p12) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(p1));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(p2));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(p3));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(p4));
             if ((p5 == null)) {
                 throw new global::System.ArgumentNullException("p5");
@@ -4099,11 +4223,23 @@ namespace Semz.waves_schemaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(p7));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(p8));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(p9));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(p10));
+            if ((p6 == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+            }
+            if ((p7 == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(p9));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(p10));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(p11));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(p12));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

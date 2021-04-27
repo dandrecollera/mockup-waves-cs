@@ -225,43 +225,7 @@ namespace Semz
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string input = textBox1.Text.Trim();
-                bool numeric = int.TryParse(input, out int num);
-                MySqlCommand command;
-                if (numeric)
-                {
-                    command = new MySqlCommand("SELECT * FROM `inventory` WHERE `id_inventory` =" + num);
-                }
-                else
-                {
-                    command = new MySqlCommand("SELECT * FROM `inventory` WHERE `item` LIKE @input OR `type` LIKE @input", db.GetConnection);
-                    command.Parameters.AddWithValue("@input", "%" + input + "%");
-                }
-                DataTable table = invFunction.getInventory(command);
-
-                dataGridView1.DataSource = table;
-                textBox2.Text = table.Rows[0]["id_inventory"].ToString();
-                textBox3.Text = table.Rows[0]["item"].ToString();
-                textBox4.Text = table.Rows[0]["stock"].ToString();
-                textBox5.Text = table.Rows[0]["price"].ToString();
-                string type = table.Rows[0]["type"].ToString();
-                foreach(Control foo in panel1.Controls)
-                {
-                    if(foo is RadioButton choice)
-                    {
-                        if(choice.Tag.ToString() == type)
-                        {
-                            choice.Checked = true;
-                        }
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Enter a valid input.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            search();
         }
 
         private void inventory_MouseEnter(object sender, EventArgs e)
@@ -342,6 +306,44 @@ namespace Semz
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             update();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void search()
+        {
+            try
+            {
+                string input = textBox1.Text.Trim();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `inventory` WHERE `item` LIKE @input OR `type` LIKE @input OR `id_inventory` LIKE @input", db.GetConnection);
+                command.Parameters.AddWithValue("@input", "%" + input + "%");
+
+                DataTable table = invFunction.getInventory(command);
+
+                dataGridView1.DataSource = table;
+                textBox2.Text = table.Rows[0]["id_inventory"].ToString();
+                textBox3.Text = table.Rows[0]["item"].ToString();
+                textBox4.Text = table.Rows[0]["stock"].ToString();
+                textBox5.Text = table.Rows[0]["price"].ToString();
+                string type = table.Rows[0]["type"].ToString();
+                foreach (Control foo in panel1.Controls)
+                {
+                    if (foo is RadioButton choice)
+                    {
+                        if (choice.Tag.ToString() == type)
+                        {
+                            choice.Checked = true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

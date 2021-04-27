@@ -31,14 +31,14 @@ namespace Semz
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(updateTransaction));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.waves_schemaDataSet = new Semz.waves_schemaDataSet();
             this.inventoryTableAdapter = new Semz.waves_schemaDataSetTableAdapters.inventoryTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,9 +47,11 @@ namespace Semz
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_inventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +112,9 @@ namespace Semz
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.itemDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn});
+            this.typeDataGridViewTextBoxColumn,
+            this.stock,
+            this.id_inventory});
             this.dataGridView1.DataSource = this.inventoryBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(360, 98);
             this.dataGridView1.MultiSelect = false;
@@ -121,15 +125,15 @@ namespace Semz
             this.dataGridView1.TabIndex = 46;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // waves_schemaDataSet
-            // 
-            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
-            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // inventoryBindingSource
             // 
             this.inventoryBindingSource.DataMember = "inventory";
             this.inventoryBindingSource.DataSource = this.waves_schemaDataSet;
+            // 
+            // waves_schemaDataSet
+            // 
+            this.waves_schemaDataSet.DataSetName = "waves_schemaDataSet";
+            this.waves_schemaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inventoryTableAdapter
             // 
@@ -212,12 +216,27 @@ namespace Semz
             // 
             // typeDataGridViewTextBoxColumn
             // 
-            dataGridViewCellStyle5.NullValue = "0";
-            this.typeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.NullValue = "0";
+            this.typeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.typeDataGridViewTextBoxColumn.HeaderText = "Added to Cart";
             this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
             this.typeDataGridViewTextBoxColumn.ReadOnly = true;
             this.typeDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // stock
+            // 
+            this.stock.DataPropertyName = "stock";
+            this.stock.HeaderText = "stock";
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            // 
+            // id_inventory
+            // 
+            this.id_inventory.DataPropertyName = "id_inventory";
+            this.id_inventory.HeaderText = "id_inventory";
+            this.id_inventory.Name = "id_inventory";
+            this.id_inventory.ReadOnly = true;
+            this.id_inventory.Visible = false;
             // 
             // updateTransaction
             // 
@@ -241,8 +260,8 @@ namespace Semz
             this.Text = "updateTransaction";
             this.Load += new System.EventHandler(this.updateTransaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waves_schemaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,12 +277,14 @@ namespace Semz
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_inventory;
     }
 }

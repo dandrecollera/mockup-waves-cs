@@ -254,35 +254,7 @@ namespace Semz
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string input = textBox1.Text.Trim();
-                bool numeric = int.TryParse(input, out int num);
-                MySqlCommand command;      
-                if (numeric)
-                {
-                    command = new MySqlCommand("SELECT * FROM `accounts` WHERE `id_accounts` =" + num);
-                }
-                else
-                {
-                    command = new MySqlCommand("SELECT * FROM `accounts` WHERE `name` LIKE @input OR `username` LIKE @input", db.GetConnection);
-                    command.Parameters.AddWithValue("@input", "%" + input + "%");
-                }
-                DataTable table = accFunctions.getUser(command);
-
-                dataGridView1.DataSource = table;
-
-                textBox2.Text = table.Rows[0]["id_accounts"].ToString();
-                textBox3.Text = table.Rows[0]["name"].ToString();
-                textBox4.Text = table.Rows[0]["username"].ToString();
-                textBox5.Text = table.Rows[0]["sex"].ToString();
-                textBox6.Text = table.Rows[0]["date"].ToString();
-                textBox7.Text = table.Rows[0]["password"].ToString();
-            }
-            catch
-            {
-                MessageBox.Show("Enter a valid input.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            search();
         }
 
         public void update()
@@ -311,6 +283,36 @@ namespace Semz
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             update();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+
+
+        private void search()
+        {
+            try
+            {
+                string input = textBox1.Text.Trim();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `accounts` WHERE `name` LIKE @input OR `username` LIKE @input OR `id_accounts` LIKE @input", db.GetConnection);
+                command.Parameters.AddWithValue("@input", "%" + input + "%");
+                DataTable table = accFunctions.getUser(command);
+
+                dataGridView1.DataSource = table;
+
+                textBox2.Text = table.Rows[0]["id_accounts"].ToString();
+                textBox3.Text = table.Rows[0]["name"].ToString();
+                textBox4.Text = table.Rows[0]["username"].ToString();
+                textBox5.Text = table.Rows[0]["sex"].ToString();
+                textBox6.Text = table.Rows[0]["date"].ToString();
+                textBox7.Text = table.Rows[0]["password"].ToString();
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

@@ -244,21 +244,22 @@ namespace Semz
 
         private void button2_Click(object sender, EventArgs e)
         {
+            search();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void search()
+        {
             try
             {
                 string input = textBox1.Text.Trim();
                 bool numeric = int.TryParse(input, out int num);
-                MySqlCommand command;
-                if (numeric)
-                {
-                    command = new MySqlCommand("SELECT * FROM `reports` WHERE `id_reports` =" + num);
-                }
-                else
-                {
-                    command = new MySqlCommand("SELECT * FROM `reports` WHERE `report_title` LIKE @input OR `author` LIKE @input", db.GetConnection);
-                    command.Parameters.AddWithValue("@input", "%" + input + "%");
-
-                }
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `reports` WHERE `report_title` LIKE @input OR `author` LIKE @input OR `id_reports` LIKE @input", db.GetConnection);
+                command.Parameters.AddWithValue("@input", "%" + input + "%");
 
                 DataTable table = repFunctions.getReport(command);
                 dataGridView1.DataSource = table;
@@ -271,11 +272,8 @@ namespace Semz
             }
             catch
             {
-                MessageBox.Show("Enter a Valid Input.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                return;
             }
         }
     }
-
-
 }
